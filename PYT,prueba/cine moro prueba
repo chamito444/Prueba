@@ -1,0 +1,74 @@
+x = 1
+entrada_niño = 5500
+entrada_joven = 7000
+entrada_adulto = 9000
+cant_total_niño = 0
+cant_total_joven = 0
+cant_total_adulto = 0
+cant_niño = 0
+cant_joven = 0
+cant_adulto = 0
+ventas_niño = 0
+ventas_joven = 0
+ventas_adulto = 0
+ventas_total = 0 
+ventas_total_dia = 0
+
+while x == 1:
+    print("_________________________________")
+    print("Bienvenido al CINE MORO")
+    print("Que opcion nesesita ???: ")
+    print("1. Valor Niño de $5.500 (edad entre 1-13)")
+    print("2. Valor Joven de $7.0000 (edad entre 14-21)")
+    print("3. Valor Adulto $9.0000 (edad de 22 en adelante)")
+    print("4. Emitir Boleta")
+    print("5. Terminar y salir")
+    try:
+        op = int(input("Ingrese la opcion requerida: "))
+        if op == 1:
+            cant_niño = int(input("Ingrese la cantidad: "))
+            cant_total_niño = cant_total_niño + cant_niño
+            ventas_niño =ventas_niño + (cant_niño * entrada_niño)
+        elif op == 2:
+            cant_joven = int(input("Ingrese la cantidad: "))
+            cant_total_joven = cant_total_joven + cant_joven
+            ventas_joven = ventas_joven + (cant_joven * entrada_joven)
+        elif op == 3:
+            cant_adulto = int(input("Ingrese la cantidad: "))
+            cant_total_adulto = cant_total_adulto + cant_adulto
+            ventas_adulto = ventas_adulto + (cant_adulto * entrada_adulto)
+        elif op == 4:
+            ventas_total = ventas_adulto + ventas_joven + venta_niño
+            print("-------------------------------------------------------------")
+            print("                Su gasto total es : ")
+            print(f"Niño:   Total entradas:{cant_niño} Total {ventas_niño}")
+            print(f"Joven:   Total entradas:{cant_joven} Total {ventas_joven}")
+            print(f"Adulto:  Total entradas:{cant_adulto} Total {ventas_adulto}")
+            print("-------------------------------------------------------------")
+            print(f"            Subtotales: {ventas_total}")
+            print("-------------------------------------------------------------")
+            ventas_adulto = 0
+            ventas_joven = 0
+            ventas_adulto = 0
+            cant_niño = 0
+            cant_joven =0
+            cant_adulto =0            
+        elif op == 5:
+            print("Terminando todo ..........")
+            entradas_niño_por = int(cant_niño / cant_total) * 100
+            entradas_joven_por = int(cant_joven / cant_total) * 100
+            entradas_adulto_por = int(cant_adulto / cant_total) * 100
+            ventas_total_dia = ventas_total_dia + ventas_total
+            cant_total = cant_total_adulto + cant_total_joven + cant_total_niño
+            print(f"Su total en la venta es: {ventas_total_dia}")
+            print(f"Su total de entradas es: {cant_total}")
+            print(f"Entradas de niño: {entradas_niño_por}%")
+            print(f"Entradas de joven: {entradas_joven_por}%")
+            print(f"Entradas de adulto: {entradas_adulto_por}%")
+            x = 0
+        else:
+            print("Opcion no validada")
+    except:
+        print("Error, la opcion ingresada no es valida")
+
+print("profe piedad xD")
